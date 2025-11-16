@@ -1,0 +1,1643 @@
+$date
+	Mon Nov 17 00:12:39 2025
+$end
+$version
+	Questa Intel Starter FPGA Edition Version 2025.1
+$end
+$timescale
+	1ps
+$end
+
+$scope module tb_digital_clock $end
+$var reg 1 ! clk $end
+$var reg 1 " rst_n $end
+$var reg 1 # set_time $end
+$var reg 5 $ hr_in [4:0] $end
+$var reg 6 % min_in [5:0] $end
+$var reg 6 & sec_in [5:0] $end
+$var reg 1 ' set_alarm $end
+$var reg 5 ( alarm_hr_in [4:0] $end
+$var reg 6 ) alarm_min_in [5:0] $end
+$var reg 1 * alarm_en_in $end
+$var reg 1 + alarm_clear $end
+$var wire 1 , hr [4] $end
+$var wire 1 - hr [3] $end
+$var wire 1 . hr [2] $end
+$var wire 1 / hr [1] $end
+$var wire 1 0 hr [0] $end
+$var wire 1 1 min [5] $end
+$var wire 1 2 min [4] $end
+$var wire 1 3 min [3] $end
+$var wire 1 4 min [2] $end
+$var wire 1 5 min [1] $end
+$var wire 1 6 min [0] $end
+$var wire 1 7 sec [5] $end
+$var wire 1 8 sec [4] $end
+$var wire 1 9 sec [3] $end
+$var wire 1 : sec [2] $end
+$var wire 1 ; sec [1] $end
+$var wire 1 < sec [0] $end
+$var wire 1 = alarm_active $end
+$var integer 32 > fd $end
+
+$scope module dut $end
+$var parameter 32 ? TICKS_PER_SEC $end
+$var wire 1 @ clk $end
+$var wire 1 A rst_n $end
+$var wire 1 B set_time $end
+$var wire 1 C hr_in [4] $end
+$var wire 1 D hr_in [3] $end
+$var wire 1 E hr_in [2] $end
+$var wire 1 F hr_in [1] $end
+$var wire 1 G hr_in [0] $end
+$var wire 1 H min_in [5] $end
+$var wire 1 I min_in [4] $end
+$var wire 1 J min_in [3] $end
+$var wire 1 K min_in [2] $end
+$var wire 1 L min_in [1] $end
+$var wire 1 M min_in [0] $end
+$var wire 1 N sec_in [5] $end
+$var wire 1 O sec_in [4] $end
+$var wire 1 P sec_in [3] $end
+$var wire 1 Q sec_in [2] $end
+$var wire 1 R sec_in [1] $end
+$var wire 1 S sec_in [0] $end
+$var wire 1 T set_alarm $end
+$var wire 1 U alarm_hr_in [4] $end
+$var wire 1 V alarm_hr_in [3] $end
+$var wire 1 W alarm_hr_in [2] $end
+$var wire 1 X alarm_hr_in [1] $end
+$var wire 1 Y alarm_hr_in [0] $end
+$var wire 1 Z alarm_min_in [5] $end
+$var wire 1 [ alarm_min_in [4] $end
+$var wire 1 \ alarm_min_in [3] $end
+$var wire 1 ] alarm_min_in [2] $end
+$var wire 1 ^ alarm_min_in [1] $end
+$var wire 1 _ alarm_min_in [0] $end
+$var wire 1 ` alarm_en_in $end
+$var wire 1 a alarm_clear $end
+$var wire 1 , hr [4] $end
+$var wire 1 - hr [3] $end
+$var wire 1 . hr [2] $end
+$var wire 1 / hr [1] $end
+$var wire 1 0 hr [0] $end
+$var wire 1 1 min [5] $end
+$var wire 1 2 min [4] $end
+$var wire 1 3 min [3] $end
+$var wire 1 4 min [2] $end
+$var wire 1 5 min [1] $end
+$var wire 1 6 min [0] $end
+$var wire 1 7 sec [5] $end
+$var wire 1 8 sec [4] $end
+$var wire 1 9 sec [3] $end
+$var wire 1 : sec [2] $end
+$var wire 1 ; sec [1] $end
+$var wire 1 < sec [0] $end
+$var wire 1 = alarm_active $end
+$var wire 1 b tick_1hz $end
+$var wire 1 c sec_roll $end
+$var wire 1 d min_roll $end
+$var reg 5 e alarm_hr [4:0] $end
+$var reg 6 f alarm_min [5:0] $end
+$var reg 1 g alarm_en $end
+
+$scope module u_tg $end
+$var parameter 32 h TICKS_PER_SEC $end
+$var parameter 32 i W $end
+$var wire 1 @ clk $end
+$var wire 1 A rst_n $end
+$var reg 1 j tick_1hz $end
+$var reg 4 k ctr [3:0] $end
+$upscope $end
+
+$scope module u_sec $end
+$var wire 1 @ clk $end
+$var wire 1 A rst_n $end
+$var wire 1 b en $end
+$var wire 1 B load $end
+$var wire 1 N data [5] $end
+$var wire 1 O data [4] $end
+$var wire 1 P data [3] $end
+$var wire 1 Q data [2] $end
+$var wire 1 R data [1] $end
+$var wire 1 S data [0] $end
+$var reg 6 l q [5:0] $end
+$var wire 1 c carry $end
+$upscope $end
+
+$scope module u_min $end
+$var wire 1 @ clk $end
+$var wire 1 A rst_n $end
+$var wire 1 c en $end
+$var wire 1 B load $end
+$var wire 1 H data [5] $end
+$var wire 1 I data [4] $end
+$var wire 1 J data [3] $end
+$var wire 1 K data [2] $end
+$var wire 1 L data [1] $end
+$var wire 1 M data [0] $end
+$var reg 6 m q [5:0] $end
+$var wire 1 d carry $end
+$upscope $end
+
+$scope module u_hr $end
+$var wire 1 @ clk $end
+$var wire 1 A rst_n $end
+$var wire 1 d en $end
+$var wire 1 B load $end
+$var wire 1 C data [4] $end
+$var wire 1 D data [3] $end
+$var wire 1 E data [2] $end
+$var wire 1 F data [1] $end
+$var wire 1 G data [0] $end
+$var reg 5 n q [4:0] $end
+$upscope $end
+
+$scope module u_alarm $end
+$var wire 1 @ clk $end
+$var wire 1 A rst_n $end
+$var wire 1 , hr [4] $end
+$var wire 1 - hr [3] $end
+$var wire 1 . hr [2] $end
+$var wire 1 / hr [1] $end
+$var wire 1 0 hr [0] $end
+$var wire 1 1 min [5] $end
+$var wire 1 2 min [4] $end
+$var wire 1 3 min [3] $end
+$var wire 1 4 min [2] $end
+$var wire 1 5 min [1] $end
+$var wire 1 6 min [0] $end
+$var wire 1 7 sec [5] $end
+$var wire 1 8 sec [4] $end
+$var wire 1 9 sec [3] $end
+$var wire 1 : sec [2] $end
+$var wire 1 ; sec [1] $end
+$var wire 1 < sec [0] $end
+$var wire 1 o alarm_hr [4] $end
+$var wire 1 p alarm_hr [3] $end
+$var wire 1 q alarm_hr [2] $end
+$var wire 1 r alarm_hr [1] $end
+$var wire 1 s alarm_hr [0] $end
+$var wire 1 t alarm_min [5] $end
+$var wire 1 u alarm_min [4] $end
+$var wire 1 v alarm_min [3] $end
+$var wire 1 w alarm_min [2] $end
+$var wire 1 x alarm_min [1] $end
+$var wire 1 y alarm_min [0] $end
+$var wire 1 z alarm_en $end
+$var wire 1 a alarm_clear $end
+$var reg 1 { alarm_active $end
+$var wire 1 | match $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+0"
+0#
+bx $
+bx %
+bx &
+0'
+bx (
+bx )
+0*
+0+
+0j
+b0 k
+b0 l
+b0 m
+b0 n
+b0 e
+b0 f
+0g
+0{
+b1010 ?
+b1010 h
+b100 i
+b10000000000000000000000000000011 >
+00
+0/
+0.
+0-
+0,
+06
+05
+04
+03
+02
+01
+0<
+0;
+0:
+09
+08
+07
+0=
+0b
+0c
+0d
+0|
+0a
+0`
+x_
+x^
+x]
+x\
+x[
+xZ
+xY
+xX
+xW
+xV
+xU
+0T
+xS
+xR
+xQ
+xP
+xO
+xN
+xM
+xL
+xK
+xJ
+xI
+xH
+xG
+xF
+xE
+xD
+xC
+0B
+0A
+0@
+0z
+0y
+0x
+0w
+0v
+0u
+0t
+0s
+0r
+0q
+0p
+0o
+$end
+#50000
+1!
+1@
+#100000
+0!
+0@
+#150000
+1!
+1@
+#200000
+0!
+0@
+#250000
+1!
+1@
+#300000
+0!
+0@
+#350000
+1!
+1@
+#400000
+0!
+0@
+#450000
+1!
+1@
+1"
+1A
+#500000
+0!
+0@
+#550000
+1!
+1@
+b10111 $
+b111011 %
+b110111 &
+1#
+1S
+1R
+1Q
+0P
+1O
+1N
+1M
+1L
+0K
+1J
+1I
+1H
+1G
+1F
+1E
+0D
+1C
+1B
+b1 k
+#600000
+0!
+0@
+#650000
+1!
+1@
+0#
+0B
+b10 k
+b10111 n
+b111011 m
+b110111 l
+1<
+1;
+1:
+18
+17
+16
+15
+13
+12
+11
+10
+1/
+1.
+1,
+#700000
+0!
+0@
+#750000
+1!
+1@
+b0 (
+b0 )
+1*
+1'
+0_
+0^
+0]
+0\
+0[
+0Z
+0Y
+0X
+0W
+0V
+0U
+1`
+1T
+b11 k
+#800000
+0!
+0@
+#850000
+1!
+1@
+0'
+0T
+b100 k
+1g
+1z
+#900000
+0!
+0@
+#950000
+1!
+1@
+b101 k
+#1000000
+0!
+0@
+#1050000
+1!
+1@
+b110 k
+#1100000
+0!
+0@
+#1150000
+1!
+1@
+b111 k
+#1200000
+0!
+0@
+#1250000
+1!
+1@
+b1000 k
+#1300000
+0!
+0@
+#1350000
+1!
+1@
+b1001 k
+#1400000
+0!
+0@
+#1450000
+1!
+1@
+b0 k
+1j
+1b
+#1500000
+0!
+0@
+#1550000
+1!
+1@
+b1 k
+0j
+b111000 l
+0b
+0<
+0;
+0:
+19
+#1600000
+0!
+0@
+#1650000
+1!
+1@
+b10 k
+#1700000
+0!
+0@
+#1750000
+1!
+1@
+b11 k
+#1800000
+0!
+0@
+#1850000
+1!
+1@
+b100 k
+#1900000
+0!
+0@
+#1950000
+1!
+1@
+b101 k
+#2000000
+0!
+0@
+#2050000
+1!
+1@
+b110 k
+#2100000
+0!
+0@
+#2150000
+1!
+1@
+b111 k
+#2200000
+0!
+0@
+#2250000
+1!
+1@
+b1000 k
+#2300000
+0!
+0@
+#2350000
+1!
+1@
+b1001 k
+#2400000
+0!
+0@
+#2450000
+1!
+1@
+b0 k
+1j
+1b
+#2500000
+0!
+0@
+#2550000
+1!
+1@
+b1 k
+0j
+b111001 l
+0b
+1<
+#2600000
+0!
+0@
+#2650000
+1!
+1@
+b10 k
+#2700000
+0!
+0@
+#2750000
+1!
+1@
+b11 k
+#2800000
+0!
+0@
+#2850000
+1!
+1@
+b100 k
+#2900000
+0!
+0@
+#2950000
+1!
+1@
+b101 k
+#3000000
+0!
+0@
+#3050000
+1!
+1@
+b110 k
+#3100000
+0!
+0@
+#3150000
+1!
+1@
+b111 k
+#3200000
+0!
+0@
+#3250000
+1!
+1@
+b1000 k
+#3300000
+0!
+0@
+#3350000
+1!
+1@
+b1001 k
+#3400000
+0!
+0@
+#3450000
+1!
+1@
+b0 k
+1j
+1b
+#3500000
+0!
+0@
+#3550000
+1!
+1@
+b1 k
+0j
+b111010 l
+0b
+0<
+1;
+#3600000
+0!
+0@
+#3650000
+1!
+1@
+b10 k
+#3700000
+0!
+0@
+#3750000
+1!
+1@
+b11 k
+#3800000
+0!
+0@
+#3850000
+1!
+1@
+b100 k
+#3900000
+0!
+0@
+#3950000
+1!
+1@
+b101 k
+#4000000
+0!
+0@
+#4050000
+1!
+1@
+b110 k
+#4100000
+0!
+0@
+#4150000
+1!
+1@
+b111 k
+#4200000
+0!
+0@
+#4250000
+1!
+1@
+b1000 k
+#4300000
+0!
+0@
+#4350000
+1!
+1@
+b1001 k
+#4400000
+0!
+0@
+#4450000
+1!
+1@
+b0 k
+1j
+1b
+#4500000
+0!
+0@
+#4550000
+1!
+1@
+b1 k
+0j
+b111011 l
+0b
+1c
+1<
+0c
+1d
+0d
+#4600000
+0!
+0@
+#4650000
+1!
+1@
+b10 k
+#4700000
+0!
+0@
+#4750000
+1!
+1@
+b11 k
+#4800000
+0!
+0@
+#4850000
+1!
+1@
+b100 k
+#4900000
+0!
+0@
+#4950000
+1!
+1@
+b101 k
+#5000000
+0!
+0@
+#5050000
+1!
+1@
+b110 k
+#5100000
+0!
+0@
+#5150000
+1!
+1@
+b111 k
+#5200000
+0!
+0@
+#5250000
+1!
+1@
+b1000 k
+#5300000
+0!
+0@
+#5350000
+1!
+1@
+b1001 k
+#5400000
+0!
+0@
+#5450000
+1!
+1@
+b0 k
+1j
+1b
+1c
+1d
+#5500000
+0!
+0@
+#5550000
+1!
+1@
+b1 k
+0j
+b0 n
+b0 m
+b0 l
+0b
+0d
+0c
+0<
+0;
+09
+08
+07
+06
+05
+03
+02
+01
+00
+0/
+0.
+0,
+1|
+#5600000
+0!
+0@
+#5650000
+1!
+1@
+b10 k
+1{
+1=
+#5700000
+0!
+0@
+#5750000
+1!
+1@
+b11 k
+#5800000
+0!
+0@
+#5850000
+1!
+1@
+b100 k
+#5900000
+0!
+0@
+#5950000
+1!
+1@
+b101 k
+#6000000
+0!
+0@
+#6050000
+1!
+1@
+b110 k
+#6100000
+0!
+0@
+#6150000
+1!
+1@
+b111 k
+#6200000
+0!
+0@
+#6250000
+1!
+1@
+b1000 k
+#6300000
+0!
+0@
+#6350000
+1!
+1@
+b1001 k
+#6400000
+0!
+0@
+#6450000
+1!
+1@
+b0 k
+1j
+1b
+#6500000
+0!
+0@
+#6550000
+1!
+1@
+b1 k
+0j
+b1 l
+0b
+1<
+0|
+#6600000
+0!
+0@
+#6650000
+1!
+1@
+b10 k
+#6700000
+0!
+0@
+#6750000
+1!
+1@
+b11 k
+#6800000
+0!
+0@
+#6850000
+1!
+1@
+b100 k
+#6900000
+0!
+0@
+#6950000
+1!
+1@
+b101 k
+#7000000
+0!
+0@
+#7050000
+1!
+1@
+b110 k
+#7100000
+0!
+0@
+#7150000
+1!
+1@
+b111 k
+#7200000
+0!
+0@
+#7250000
+1!
+1@
+b1000 k
+#7300000
+0!
+0@
+#7350000
+1!
+1@
+b1001 k
+#7400000
+0!
+0@
+#7450000
+1!
+1@
+b0 k
+1j
+1b
+#7500000
+0!
+0@
+#7550000
+1!
+1@
+b1 k
+0j
+b10 l
+0b
+0<
+1;
+#7600000
+0!
+0@
+#7650000
+1!
+1@
+b10 k
+#7700000
+0!
+0@
+#7750000
+1!
+1@
+b11 k
+#7800000
+0!
+0@
+#7850000
+1!
+1@
+b100 k
+#7900000
+0!
+0@
+#7950000
+1!
+1@
+b101 k
+#8000000
+0!
+0@
+#8050000
+1!
+1@
+b110 k
+#8100000
+0!
+0@
+#8150000
+1!
+1@
+b111 k
+#8200000
+0!
+0@
+#8250000
+1!
+1@
+b1000 k
+#8300000
+0!
+0@
+#8350000
+1!
+1@
+b1001 k
+#8400000
+0!
+0@
+#8450000
+1!
+1@
+b0 k
+1j
+1b
+#8500000
+0!
+0@
+#8550000
+1!
+1@
+b1 k
+0j
+b11 l
+0b
+1<
+#8600000
+0!
+0@
+#8650000
+1!
+1@
+b10 k
+#8700000
+0!
+0@
+#8750000
+1!
+1@
+b11 k
+#8800000
+0!
+0@
+#8850000
+1!
+1@
+b100 k
+#8900000
+0!
+0@
+#8950000
+1!
+1@
+b101 k
+#9000000
+0!
+0@
+#9050000
+1!
+1@
+b110 k
+#9100000
+0!
+0@
+#9150000
+1!
+1@
+b111 k
+#9200000
+0!
+0@
+#9250000
+1!
+1@
+b1000 k
+#9300000
+0!
+0@
+#9350000
+1!
+1@
+b1001 k
+#9400000
+0!
+0@
+#9450000
+1!
+1@
+b0 k
+1j
+1b
+#9500000
+0!
+0@
+#9550000
+1!
+1@
+b1 k
+0j
+b100 l
+0b
+0<
+0;
+1:
+#9600000
+0!
+0@
+#9650000
+1!
+1@
+b10 k
+#9700000
+0!
+0@
+#9750000
+1!
+1@
+b11 k
+#9800000
+0!
+0@
+#9850000
+1!
+1@
+b100 k
+#9900000
+0!
+0@
+#9950000
+1!
+1@
+b101 k
+#10000000
+0!
+0@
+#10050000
+1!
+1@
+b110 k
+#10100000
+0!
+0@
+#10150000
+1!
+1@
+b111 k
+#10200000
+0!
+0@
+#10250000
+1!
+1@
+b1000 k
+#10300000
+0!
+0@
+#10350000
+1!
+1@
+b1001 k
+#10400000
+0!
+0@
+#10450000
+1!
+1@
+b0 k
+1j
+1b
+#10500000
+0!
+0@
+#10550000
+1!
+1@
+b1 k
+0j
+b101 l
+0b
+1<
+#10600000
+0!
+0@
+#10650000
+1!
+1@
+b10 k
+#10700000
+0!
+0@
+#10750000
+1!
+1@
+b11 k
+#10800000
+0!
+0@
+#10850000
+1!
+1@
+b100 k
+#10900000
+0!
+0@
+#10950000
+1!
+1@
+b101 k
+#11000000
+0!
+0@
+#11050000
+1!
+1@
+b110 k
+#11100000
+0!
+0@
+#11150000
+1!
+1@
+b111 k
+#11200000
+0!
+0@
+#11250000
+1!
+1@
+b1000 k
+#11300000
+0!
+0@
+#11350000
+1!
+1@
+b1001 k
+#11400000
+0!
+0@
+#11450000
+1!
+1@
+b0 k
+1j
+1b
+#11500000
+0!
+0@
+#11550000
+1!
+1@
+b1 k
+0j
+b110 l
+0b
+0<
+1;
+#11600000
+0!
+0@
+#11650000
+1!
+1@
+b10 k
+#11700000
+0!
+0@
+#11750000
+1!
+1@
+b11 k
+#11800000
+0!
+0@
+#11850000
+1!
+1@
+b100 k
+#11900000
+0!
+0@
+#11950000
+1!
+1@
+b101 k
+#12000000
+0!
+0@
+#12050000
+1!
+1@
+b110 k
+#12100000
+0!
+0@
+#12150000
+1!
+1@
+b111 k
+#12200000
+0!
+0@
+#12250000
+1!
+1@
+b1000 k
+#12300000
+0!
+0@
+#12350000
+1!
+1@
+b1001 k
+#12400000
+0!
+0@
+#12450000
+1!
+1@
+b0 k
+1j
+1b
+#12500000
+0!
+0@
+#12550000
+1!
+1@
+b1 k
+0j
+b111 l
+0b
+1<
+#12600000
+0!
+0@
+#12650000
+1!
+1@
+b10 k
+#12700000
+0!
+0@
+#12750000
+1!
+1@
+b11 k
+#12800000
+0!
+0@
+#12850000
+1!
+1@
+b100 k
+#12900000
+0!
+0@
+#12950000
+1!
+1@
+b101 k
+#13000000
+0!
+0@
+#13050000
+1!
+1@
+b110 k
+#13100000
+0!
+0@
+#13150000
+1!
+1@
+b111 k
+#13200000
+0!
+0@
+#13250000
+1!
+1@
+b1000 k
+#13300000
+0!
+0@
+#13350000
+1!
+1@
+b1001 k
+#13400000
+0!
+0@
+#13450000
+1!
+1@
+b0 k
+1j
+1b
+#13500000
+0!
+0@
+#13550000
+1!
+1@
+b1 k
+0j
+b1000 l
+0b
+0<
+0;
+0:
+19
+#13600000
+0!
+0@
+#13650000
+1!
+1@
+b10 k
+#13700000
+0!
+0@
+#13750000
+1!
+1@
+b11 k
+#13800000
+0!
+0@
+#13850000
+1!
+1@
+b100 k
+#13900000
+0!
+0@
+#13950000
+1!
+1@
+b101 k
+#14000000
+0!
+0@
+#14050000
+1!
+1@
+b110 k
+#14100000
+0!
+0@
+#14150000
+1!
+1@
+b111 k
+#14200000
+0!
+0@
+#14250000
+1!
+1@
+b1000 k
+#14300000
+0!
+0@
+#14350000
+1!
+1@
+b1001 k
+#14400000
+0!
+0@
+#14450000
+1!
+1@
+b0 k
+1j
+1b
+#14500000
+0!
+0@
+#14550000
+1!
+1@
+b1 k
+0j
+b1001 l
+0b
+1<
+#14600000
+0!
+0@
+#14650000
+1!
+1@
+b10 k
+#14700000
+0!
+0@
+#14750000
+1!
+1@
+b11 k
+#14800000
+0!
+0@
+#14850000
+1!
+1@
+b100 k
+#14900000
+0!
+0@
+#14950000
+1!
+1@
+b101 k
+#15000000
+0!
+0@
+#15050000
+1!
+1@
+b110 k
+#15100000
+0!
+0@
+#15150000
+1!
+1@
+b111 k
+#15200000
+0!
+0@
+#15250000
+1!
+1@
+b1000 k
+#15300000
+0!
+0@
+#15350000
+1!
+1@
+b1001 k
+#15400000
+0!
+0@
+#15450000
+1!
+1@
+b0 k
+1j
+1b
+#15500000
+0!
+0@
+#15550000
+1!
+1@
+b1 k
+0j
+b1010 l
+0b
+0<
+1;
+#15600000
+0!
+0@
+#15650000
+1!
+1@
+b10 k
+#15700000
+0!
+0@
+#15750000
+1!
+1@
+b11 k
+#15800000
+0!
+0@
+#15850000
+1!
+1@
+b100 k
+#15900000
+0!
+0@
+#15950000
+1!
+1@
+b101 k
+#16000000
+0!
+0@
+#16050000
+1!
+1@
+b110 k
+#16100000
+0!
+0@
+#16150000
+1!
+1@
+b111 k
+#16200000
+0!
+0@
+#16250000
+1!
+1@
+b1000 k
+#16300000
+0!
+0@
+#16350000
+1!
+1@
+b1001 k
+#16400000
+0!
+0@
+#16450000
+1!
+1@
+b0 k
+1j
+1b
+#16500000
+0!
+0@
+#16550000
+1!
+1@
+b1 k
+0j
+b1011 l
+0b
+1<
+#1
